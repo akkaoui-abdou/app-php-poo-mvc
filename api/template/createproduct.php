@@ -47,3 +47,10 @@ if($productC->delete($id)){
 
 
 
+
+
+
+
+
+
+
