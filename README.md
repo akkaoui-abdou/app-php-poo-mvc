@@ -40,12 +40,13 @@ https://gitlab.unistra.fr/delmibouras/projetweb/-/tree/master/WEB/vendor/nikic/f
 
 ## How to use variable Env with file .env
 links : https://packagist.org/packages/vlucas/phpdotenv
+
         $ composer require vlucas/phpdotenv
 
 ## You can then load .env in your application with:
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+        $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+        $dotenv->load();
 
 ## file .env content
 
