@@ -1,4 +1,6 @@
 <?php
+namespace db;
+
 class Database{
  
     // specify your own database credentials

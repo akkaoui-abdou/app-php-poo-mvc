@@ -1,51 +1,70 @@
-How To Create A Simple REST API in PHP? Step By Step Guide!
-===
-
-we will learn how to create a simple REST API in PHP. Enjoy our step-by-step tutorial below!
-
-PROJECT OVERVIEW
----
-What is REST API?
-To define "REST API", we have to know what is "REST" and what is "API" first. I'll do my best to explain it in simple terms because REST has a lot of concepts inside of it that could mean a lot of things.
-
-REST stands for "REpresentational State Transfer". It is a concept or architecture for managing information over the internet. REST concepts are referred to as resources. A representation of a resource must be stateless. It is usually represented by JSON. 
-
-API stands for "Application Programming Interface". It is a set of rules that allows one piece of software application to talk to another. Those "rules" can include create, read, update and delete operations. 
+## Make a PHP Router
 
 
+### in the first time install Composer in your machine
 
-FILE STRUCTURE
----
+### install package fast-route 
 
-At the end of this tutorial, we will have the following folders and files.
+https://packagist.org/packages/nikic/fast-route
 
-```html
-
-├─ api/
-├─── config/
-├────── core.php - file used for core configuration
-├────── database.php - file used for connecting to the database.
-├─── objects/
-├────── product.php - contains properties and methods for "product" database queries.
-├────── category.php - contains properties and methods for "category" database queries.
-├─── product/
-├────── create.php - file that will accept posted product data to be saved to database.
-├────── delete.php - file that will accept a product ID to delete a database record.
-├────── read.php - file that will output JSON data based from "products" database records.
-├────── read_paging.php - file that will output "products" JSON data with pagination.
-├────── read_one.php - file that will accept product ID to read a record from the database.
-├────── update.php - file that will accept a product ID to update a database record.
-├────── search.php - file that will accept keywords parameter to search "products" database.
-├─── category/
-├────── read.php - file that will output JSON data based from "categories" database records.
-├─── shared/
-├────── utilities.php - file that will return pagination array.
-```
+        composer require nikic/fast-route
 
 
+### install twig package
+
+        composer require "twig/twig:^3.0"
+
+### Fix error Route Not Found
+
+by adding file .htaccess
 
 
+## You have to add autoload in composer.json
+
+        "autoload": {
+                "psr-4": {
+                         "App\\": "src/"
+                }
+        },
+
+Source fix probleme route not found: https://stackoverflow.com/questions/56961390/class-not-found-with-composer-psr4
+
+Links :
+
+https://www.youtube.com/watch?v=ExCBgYMN5U0
+
+https://github.com/nikic/FastRoute
+
+https://gitlab.unistra.fr/delmibouras/projetweb/-/tree/master/WEB/vendor/nikic/fast-route
 
 
+## How to use variable Env with file .env
+links : https://packagist.org/packages/vlucas/phpdotenv
+        $ composer require vlucas/phpdotenv
+
+## You can then load .env in your application with:
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+## file .env content
+
+    APP_ENV=dev
+    DATABASE_NAME=gescom_db
+    DATABASE_HOST=localhost
+    DATABASE_USERNAME=root
+    DATABASE_PASSWORD=
+
+## All of the defined variables are now available in the $_ENV and $_SERVER super-globals.
+
+$db_name = $_ENV['DATABASE_NAME'];
+$app_env = $_SERVER['APP_ENV'];
 
 
+## another topics - https://dev.to/
+
+### Top 6 PHP code quality tools 2023
+links: https://dev.to/documatic/top-6-php-code-quality-tools-2023-2kb1
+
+### Exploring Async PHP
+https://dev.to/jackmarchant/exploring-async-php-5b68
