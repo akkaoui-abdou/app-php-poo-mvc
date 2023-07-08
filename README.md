@@ -61,7 +61,7 @@ $db_name = $_ENV['DATABASE_NAME'];
 $app_env = $_SERVER['APP_ENV'];
 
 
-## another topics - https://dev.to/
+## other topics - https://dev.to/
 
 ### Top 6 PHP code quality tools 2023
 links: https://dev.to/documatic/top-6-php-code-quality-tools-2023-2kb1
